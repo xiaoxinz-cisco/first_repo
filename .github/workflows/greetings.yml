@@ -1,15 +1,19 @@
 name: Greetings for PR Contributors
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - master
 
 jobs:
-  greeting:
+  test_job:
+    name: Running Unit Tests
     runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/first-interaction@v1
+    - uses: actions/setup-python@v2
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        pr-message: 'Message that will be displayed on users'' first pr'
-    - name:
-      run: |
-        python -m unittest
+        python-version: '3.7' 
+        pr-message: 'Thanks for your contribution'' first pr'
+    - name: Run Tests
+      run: python -m unittest
