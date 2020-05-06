@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
+    - name: Access into the test folder
+      run: cd tests
     - name: Running unit tests
       run: python -m unittest
 
