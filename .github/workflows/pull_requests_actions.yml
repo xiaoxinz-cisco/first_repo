@@ -8,6 +8,7 @@ jobs:
         uses: actions/checkout@master
       - name: Test
         uses: onichandame/python-test-action@master
+        working-directory: ./tests
         with:
           path: 'first_repo/tests'
           deps_list: 'requirement'
