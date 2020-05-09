@@ -1,0 +1,38 @@
+name: Run Unit Tests
+on: pull_request
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with: 
+          python-version: 3.6
+          
+      - name: Create a virtual environment
+        run: python3 -m venv genieparser_venv
+        
+      - name: Activate the virtual environment
+        run: source genieparser_venv/bin/activate
+        
+      - name: Check virtualenv
+        run: pip -V
+        
+      - name: Install pyATS
+        run: pip install pyats
+      - name: Install Genie
+        run: pip install genie
+
+      - name: Prepare repo
+        uses: actions/checkout@master
+        
+      - name: Check virtualenv
+        run: pip -V
+        
+      - name: Run Test
+        uses: onichandame/python-test-action@master
+        with:
+#         current path is: github/workspace == this repository
+          env: genieparser_venv/bin/activate
+          path: 'tests'
+          deps_list: 'requirement'
