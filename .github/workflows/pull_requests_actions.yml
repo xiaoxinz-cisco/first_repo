@@ -30,7 +30,7 @@ jobs:
         run: pip -V
         
       - name: Run Test
-        uses: xiaoxinz-cisco/pyats_run_tests@master
+        uses: onichandame/python-test-action@master
         with:
 #         current path is: github/workspace == this repository
           env: genieparser_venv/bin/activate
