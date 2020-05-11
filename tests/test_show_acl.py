@@ -10,7 +10,7 @@ from genie.libs.parser.iosxr.show_acl import ShowAclAfiAll, \
 
 
 class test_show_acl_afi_all(unittest.TestCase):
-	print("!test test test ")
+	print("!!test test test ")
     dev = Device(name='device')
     empty_output = {'execute.return_value': '      '}
 
