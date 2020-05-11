@@ -17,4 +17,4 @@ jobs:
         with:
 #         current path is: github/workspace == this repository
           path: 'tests'
-          deps_list: 'requirement'
+#           deps_list: 'requirement'
