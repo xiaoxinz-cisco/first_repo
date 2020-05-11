@@ -9,8 +9,7 @@ from genie.libs.parser.iosxr.show_acl import ShowAclAfiAll, \
 										ShowAclEthernetServices
 
 
-class test_show_acl_afi_all(unittest.TestCase):
-	
+class test_show_acl_afi_all(unittest.TestCase):	 
     dev = Device(name='device')
     empty_output = {'execute.return_value': '      '}
 
